@@ -1,585 +1,314 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Shatrughna Pandab — Odiya Poet</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Satrughna Pandab – Words that Echo Beyond Time</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root{
-      --bg-cream: #FBF6F0;
-      --paper: #F1E7DC;
-      --deep-brown: #3D2B2A;
-      --accent-maroon: #7A2A2A;
-      --gold: #B6893A;
-      --muted: #8B7A74;
-      --max-width: 1100px;
+    /* Color Palette and fonts */
+    body {
+      background: #f7f2ea;
+      color: #352314;
+      font-family: 'Lato', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
-
-    *{box-sizing:border-box}
-    body{
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      margin:0;
-      background: linear-gradient(180deg, var(--bg-cream), #f7efe6);
-      color: var(--deep-brown);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
+    header {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      background: linear-gradient(120deg, #b89560aa, #4d2c23bb), url('portrait.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-
-    /* Container */
-    .container{
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 24px;
+    .header-content {
+      position: relative;
+      z-index: 2;
     }
-
-    /* NAV */
-    header.navbar{
-      position: sticky;
-      top:0;
-      background: rgba(251,246,240,0.85);
-      backdrop-filter: blur(6px);
-      z-index: 50;
-      border-bottom: 1px solid rgba(0,0,0,0.04);
-    }
-    .nav-inner{
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 12px 24px;
-    }
-    .brand{
-      display:flex; gap:12px; align-items:center;
-    }
-    .brand h1{
+    header h1 {
       font-family: 'Merriweather', serif;
-      font-size:20px;
-      margin:0;
-      color: var(--deep-brown);
-      letter-spacing:0.4px;
+      font-size: 3em;
+      color: #fffbe9;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
-    nav ul{
-      list-style:none;
-      margin:0; padding:0;
-      display:flex;
-      gap:14px;
-      align-items:center;
+    header p {
+      font-size: 1.3em;
+      color: #f4e8c1;
+      margin-bottom: 30px;
+      font-style: italic;
     }
-    nav a{
-      text-decoration:none;
-      color:var(--muted);
-      font-size:14px;
-      padding:8px 10px;
-      border-radius:6px;
+    nav {
+      background: #8d6e53bb;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
     }
-    nav a:hover{ color:var(--deep-brown); background: rgba(0,0,0,0.03) }
-
-    /* HERO */
-    .hero{
-      margin-top:18px;
-      position:relative;
-      border-radius:12px;
-      overflow:hidden;
-      min-height:320px;
-      display:flex;
-      align-items:center;
-      color: #fff;
+    nav a {
+      color: #fffbe9;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 600;
+      font-size: 1.05em;
+      transition: color 0.2s;
     }
-    .hero .hero-bg{
-      position:absolute; inset:0;
-      background-image: url('portrait.png'); /* <-- Replace or keep filename portrait.png */
-      background-size:cover;
-      background-position:center;
-      filter:contrast(85%) saturate(95%);
-      transform: scale(1.02);
+    nav a:hover {
+      color: #b89560;
     }
-    .hero::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(123,77,32,0.4), rgba(0,0,0,0.45));
-      mix-blend-mode:multiply;
+    section {
+      max-width: 900px;
+      margin: 38px auto 0 auto;
+      padding: 0 18px;
+      background: rgba(255, 255, 245, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 26px rgba(125, 92, 60, 0.07);
     }
-    .hero .hero-inner{
-      position:relative;
-      z-index:2;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      width:100%;
-      padding:36px;
-      gap:24px;
+    .timeline, .awards, .poems, .videos, .contact {
+      margin-bottom: 36px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #dcc9a4;
     }
-    .hero-text{
-      max-width:62%;
-    }
-    .hero-text h2{
-      margin:0 0 8px 0;
+    h2 {
       font-family: 'Merriweather', serif;
-      font-size:40px;
-      line-height:1.05;
+      color: #745c3a;
+      font-size: 2em;
+      margin-bottom: 12px;
+      margin-top: 43px;
+      letter-spacing: 1px;
+    }
+    ul.timeline-list {
+      list-style: none;
+      padding: 0;
+    }
+    ul.timeline-list li {
+      margin-bottom: 11px;
+      font-size: 1.08em;
+    }
+    .awards-badge {
+      display: inline-block;
+      background: #b89560;
       color: #fff;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      border-radius: 5px;
+      padding: 5px 13px;
+      margin-right: 6px;
+      font-size: 1em;
+      letter-spacing: 1px;
     }
-    .hero-text p{
-      margin:0;
-      font-size:18px;
-      opacity:0.95;
-      color:#fff;
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 19px;
+      margin-top: 18px;
+      margin-bottom: 20px;
     }
-    .hero-photo{
-      width:200px;
-      height:260px;
-      border-radius:6px;
-      overflow:hidden;
-      border: 4px solid rgba(255,255,255,0.06);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    .work-card {
+      background: #fffbe5;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(180, 149, 96, 0.11);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .hero-photo img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(0.05) contrast(95%); }
-
-    /* LAYOUT: two column for biography */
-    .bio{
-      display:grid;
-      gap:24px;
-      grid-template-columns: 320px 1fr;
-      align-items:start;
-      margin: 28px 0;
-      padding: 20px;
-      background: linear-gradient(180deg, rgba(241,231,214,0.8), rgba(250,246,240,0.6));
-      border-radius:12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+    .work-card h3 {
+      font-size: 1.2em;
+      color: #b89560;
+      margin-bottom: 4px;
     }
-    .bio-photo{
-      width:100%; border-radius:8px; overflow:hidden; border:1px solid rgba(0,0,0,0.05);
+    .work-card p {
+      font-size: 0.98em;
+      margin-bottom: 10px;
+      color: #4c3217;
     }
-    .bio-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .bio h3{
-      font-family:'Merriweather', serif;
-      margin:0 0 8px 0;
-      font-size:22px;
-      color:var(--deep-brown);
+    .card-actions a {
+      margin-right: 6px;
+      font-size: 0.98em;
+      background: #b89560;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      text-decoration: none;
+      transition: background 0.2s;
     }
-    .bio p{ margin:0 0 12px 0; color:var(--muted) }
-
-    .timeline{
-      margin-top:12px;
-      border-left:2px dashed rgba(61,43,42,0.12);
-      padding-left:16px;
+    .card-actions a:hover {
+      background: #745c3a;
     }
-    .timeline .milestone{
-      margin-bottom:12px;
+    .poem-snippet {
+      font-size: 1.08em;
+      font-style: italic;
+      color: #6c4820;
+      margin-bottom: 12px;
+      margin-top: 7px;
     }
-    .milestone time{ display:block; font-size:13px; color:var(--muted) }
-    .milestone p{ margin:4px 0 0 0; color:var(--deep-brown) }
-
-    /* Works grid */
-    .section{
-      margin: 32px 0;
+    .video-embed {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
     }
-    .section h4{
-      font-family:'Merriweather', serif;
-      font-size:20px;
-      margin:0 0 10px 0;
+    .video-embed iframe {
+      width: 350px;
+      height: 200px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 14px rgba(180, 149, 96, 0.11);
+      background: #fff;
     }
-    .filters{ display:flex; gap:10px; margin-bottom:12px; flex-wrap:wrap }
-    .filters button{
-      background:transparent;
-      border:1px solid rgba(61,43,42,0.08);
-      padding:6px 10px; border-radius:8px; cursor:pointer;
-      font-size:13px; color:var(--muted);
+    .contact form {
+      display: grid;
+      gap: 15px;
+      max-width: 400px;
+      margin-top: 10px;
+      font-size: 1em;
     }
-    .filters .active{ background:var(--accent-maroon); color:#fff; border-color:transparent }
-
-    .works-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap:16px;
+    .contact label {
+      font-weight: 600;
     }
-    .card{
-      background:#fff;
-      border-radius:10px;
-      padding:14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-      display:flex; flex-direction:column; gap:8px;
-      min-height:160px;
+    .contact input, .contact textarea {
+      padding: 7px;
+      border: 1px solid #b89560;
+      border-radius: 5px;
+      background: #faf5e7;
+      resize: vertical;
     }
-    .card .thumb{ height:120px; border-radius:6px; overflow:hidden; background:#eee }
-    .card .meta{ display:flex; justify-content:space-between; align-items:center }
-    .card .meta h5{ margin:0; font-size:16px; font-family:'Merriweather', serif }
-    .card .excerpt{ color:var(--muted); font-size:14px }
-
-    .cta-row{ display:flex; gap:8px; margin-top:auto }
-    .btn{
-      padding:8px 10px; border-radius:8px; font-size:13px; cursor:pointer; border:none;
+    .contact button {
+      background: #b89560;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
     }
-    .btn-outline{ background:transparent; border:1px solid rgba(61,43,42,0.08) }
-    .btn-primary{ background:var(--accent-maroon); color:#fff }
-
-    /* Legacy/testimonials */
-    .legacy-grid{ display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start }
-    .pull-quote{
-      padding:18px; background: linear-gradient(180deg,#fff, #f9f7f5); border-radius:8px; font-style:italic;
-      border-left:6px solid var(--gold);
+    .contact button:hover {
+      background: #745c3a;
     }
-
-    /* Multimedia */
-    .multimedia-grid{ display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start }
-
-    /* Contact */
-    .contact{
-      display:grid; grid-template-columns: 1fr 320px; gap:18px; align-items:start; margin-bottom:36px;
-    }
-    form input, form textarea{
-      width:100%; padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); font-size:14px;
-      background:#fff;
-    }
-    form button{ margin-top:8px; padding:10px 12px; border-radius:8px; background:var(--accent-maroon); color:#fff; border:none; cursor:pointer; }
-
-    footer{ text-align:center; padding:28px 12px; color:var(--muted); font-size:14px; border-top:1px solid rgba(0,0,0,0.03) }
-
     /* Responsive */
-    @media (max-width:900px){
-      .hero-text{ max-width:100% }
-      .bio{ grid-template-columns: 1fr; }
-      .legacy-grid, .multimedia-grid, .contact{ grid-template-columns: 1fr; }
-      .hero-photo{ display:none }
-      .nav-inner{ padding:10px }
+    @media (max-width: 640px) {
+      .works-grid, .video-embed {
+        grid-template-columns: 1fr !important;
+        flex-direction: column;
+      }
+      header h1 {
+        font-size: 2em;
+      }
     }
-
   </style>
 </head>
 <body>
+<header>
+  <div class="header-content">
+    <h1>Satrughna Pandab</h1>
+    <p>"Words that echo beyond time, shaping hearts and history."</p>
+  </div>
+</header>
+<nav>
+  <a href="#biography">Biography</a>
+  <a href="#works">Works</a>
+  <a href="#themes">Themes & Impact</a>
+  <a href="#awards">Awards</a>
+  <a href="#events">Events</a>
+  <a href="#multimedia">Multimedia</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- NAV -->
-  <header class="navbar" role="banner">
-    <div class="nav-inner">
-      <div class="brand" aria-hidden="true">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style="opacity:0.9">
-          <rect width="24" height="24" rx="4" fill="#7A2A2A"></rect>
-        </svg>
-        <h1>Shatrughna Pandab</h1>
+<section id="biography" class="timeline">
+  <h2>Biography & Timeline</h2>
+  <ul class="timeline-list">
+    <li><strong>1957:</strong> Born July 19 in Odisha.</li>
+    <li><strong>1980s–Present:</strong> Key figure in Odia literary and academic circles; known for works on social resistance and empowerment.</li>
+    <li><strong>2018:</strong> Honored with Sarala Puraskar for “Misra Dhrupad”.</li>
+  </ul>
+</section>
+
+<section id="works">
+  <h2>Major Poetry Collections</h2>
+  <div class="works-grid">
+    <div class="work-card">
+      <h3>Misra Dhrupad</h3>
+      <p>Acclaimed for its focus on resistance and social change. Winner of Sarala Puraskar.</p>
+      <div class="card-actions">
+        <a href="#">Read More</a>
+        <a href="#">Download</a>
+        <a href="#">Listen</a>
       </div>
-
-      <nav role="navigation" aria-label="Main navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#biography">Biography</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#legacy">Legacy</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#multimedia">Multimedia</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
-
-  <main class="container" id="home" role="main">
-
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-text">
-          <h2>Shatrughna Pandab</h2>
-          <p style="font-size:18px; max-width:70%;">
-            “Words that echo beyond time, shaping hearts and history.”
-          </p>
-        </div>
-
-        <div class="hero-photo" aria-hidden="true">
-          <!-- Small framed portrait on the right of hero -->
-          <img src="portrait.png" alt="Portrait of Shatrughna Pandab">
-        </div>
+    <div class="work-card">
+      <h3>Prativa Satapathynka Nirbachita Kabita</h3>
+      <p>Curated selection showcasing diversity and emotional depth.</p>
+      <div class="card-actions">
+        <a href="#">Read More</a>
       </div>
-    </section>
-
-    <!-- BIOGRAPHY -->
-    <section id="biography" class="bio" aria-labelledby="bio-heading">
-      <div class="bio-photo" aria-hidden="true">
-        <img src="portrait.png" alt="Portrait of Shatrughna Pandab">
+    </div>
+    <div class="work-card">
+      <h3>Srabasti Ru Srabasti</h3>
+      <p>Resonant with lyrical beauty and social themes.</p>
+      <div class="card-actions">
+        <a href="#">Read More</a>
       </div>
-
-      <div>
-        <h3 id="bio-heading">Biography</h3>
-        <p><strong>Born:</strong> 19 July 1957 — Eminent Odiya poet celebrated for his evocative poetry and contributions to Odia literature.</p>
-
-        <p>Shatrughna Pandab’s work reflects a deep engagement with social, spiritual, and personal themes. His poems bridge tradition and modernity, using lyrical language that resonates with readers across generations. Below is a timeline of some notable milestones.</p>
-
-        <div class="timeline" aria-hidden="false">
-          <div class="milestone">
-            <time>1957</time>
-            <p>Born on 19 July 1957.</p>
-          </div>
-          <div class="milestone">
-            <time>1970s–1980s</time>
-            <p>Early poetry publications and recognition in local literary circles.</p>
-          </div>
-          <div class="milestone">
-            <time>1990s–2000s</time>
-            <p>Major collections released and invitations to national poetry festivals.</p>
-          </div>
-          <div class="milestone">
-            <time>2010s–Present</time>
-            <p>Continued readings, interviews and expanded multimedia presence.</p>
-          </div>
-        </div>
+    </div>
+    <div class="work-card">
+      <h3>Pani O Anyana Kabita</h3>
+      <p>Features poetic voice spanning human experience and spirituality.</p>
+      <div class="card-actions">
+        <a href="#">Read More</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- WORKS -->
-    <section id="works" class="section" aria-labelledby="works-heading">
-      <h4 id="works-heading">Works & Collections</h4>
+<section id="themes" class="poems">
+  <h2>Themes & Impact</h2>
+  <p><strong>Main Themes:</strong> Social resistance, caste, marginalization, emancipation, progressive change, empowerment, and the lived experience of the oppressed.</p>
+  <div class="poem-snippet">“Bhabi Nathi Keve / Bhoka ete niraba hoithai paari / Thuamula Ramapurara Manikeshwari nka / Andhara par niraba / Ete andhara je thakurani muh / Dishe nai din re bi.”</div>
+  <div class="poem-snippet">“Riding on a truck / Sanatana, where are you going? / To Therubhali or Damanjodi? / Wherever you go, there are hills. / And everywhere the hills are to be broken into dust...”</div>
+  <div class="poem-snippet">“Ask / the flustered women / blowing hard to keep the fire alight / as they push in the damp firewood, / what are they? / They can never answer / womanhood is a dazzling tongue of flame.”</div>
+</section>
 
-      <div class="filters" role="tablist" aria-label="Filter works by themes">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="love">Love</button>
-        <button class="filter-btn" data-filter="freedom">Freedom</button>
-        <button class="filter-btn" data-filter="spirituality">Spirituality</button>
-        <button class="filter-btn" data-filter="nature">Nature</button>
-      </div>
+<section id="awards" class="awards">
+  <h2>Awards & Recognition</h2>
+  <span class="awards-badge">Sarala Puraskar (2018)</span>
+  <p>Received for “Misra Dhrupad,” Satrughna Pandab was honored with this prestigious Odisha literary award. The Sarala Puraskar includes a cash prize of ₹5 lakh and formal citation, celebrating his contribution to progressive Odia poetry.</p>
+  <p><em>“This honor reflects both literary excellence and the voice of social change.”</em></p>
+</section>
 
-      <div class="works-grid" id="worksGrid">
-        <!-- Example Card 1 -->
-        <article class="card" data-theme="love">
-          <div class="thumb" style="background-image:url('https://via.placeholder.com/400x200?text=Cover'); background-size:cover"></div>
-          <div class="meta">
-            <h5>Selected Poems — Volume I</h5>
-            <span style="font-size:12px;color:var(--muted)">1992</span>
-          </div>
-          <p class="excerpt">A collection that explores the tender, timeless themes of love, longing and human connection...</p>
-          <div class="cta-row">
-            <button class="btn btn-outline" onclick="openDetails('Volume I')">Read More</button>
-            <a class="btn btn-outline" href="#" download>Download</a>
-            <button class="btn btn-primary" onclick="playAudioSample(this)">Listen</button>
-          </div>
-          <audio class="sample-audio" preload="none">
-            <!-- placeholder: replace src with actual audio file path -->
-            <source src="" type="audio/mpeg">
-          </audio>
-        </article>
+<section id="events">
+  <h2>Events & News</h2>
+  <ul>
+    <li>Upcoming Poetry Reading: 23 October, Bhubaneswar</li>
+    <li>Book Launch: “New Voices” – December 2025</li>
+    <li>Recent Interview Published in Odia Literary Journal</li>
+  </ul>
+</section>
 
-        <!-- Example Card 2 -->
-        <article class="card" data-theme="freedom">
-          <div class="thumb" style="background-image:url('https://via.placeholder.com/400x200?text=Cover'); background-size:cover"></div>
-          <div class="meta">
-            <h5>Voices of Freedom</h5>
-            <span style="font-size:12px;color:var(--muted)">2000</span>
-          </div>
-          <p class="excerpt">Poems that meditate on social freedom, identity and courage in quiet language.</p>
-          <div class="cta-row">
-            <button class="btn btn-outline" onclick="openDetails('Voices of Freedom')">Read More</button>
-            <a class="btn btn-outline" href="#" download>Download</a>
-            <button class="btn btn-primary" onclick="playAudioSample(this)">Listen</button>
-          </div>
-          <audio class="sample-audio" preload="none"><source src="" type="audio/mpeg"></audio>
-        </article>
+<section id="multimedia" class="videos">
+  <h2>Multimedia</h2>
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/_5O2LdsueD4" allowfullscreen title="Poetry Recitation 1"></iframe>
+    <iframe src="https://www.youtube.com/embed/s1rS4XrVKgA" allowfullscreen title="Poetry Recitation 2"></iframe>
+  </div>
+</section>
 
-        <!-- Example Card 3 -->
-        <article class="card" data-theme="spirituality">
-          <div class="thumb" style="background-image:url('https://via.placeholder.com/400x200?text=Cover'); background-size:cover"></div>
-          <div class="meta">
-            <h5>Silent Prayers</h5>
-            <span style="font-size:12px;color:var(--muted)">2008</span>
-          </div>
-          <p class="excerpt">Reflective pieces that look inward and draw on spiritual traditions of the region.</p>
-          <div class="cta-row">
-            <button class="btn btn-outline" onclick="openDetails('Silent Prayers')">Read More</button>
-            <a class="btn btn-outline" href="#" download>Download</a>
-            <button class="btn btn-primary" onclick="playAudioSample(this)">Listen</button>
-          </div>
-          <audio class="sample-audio" preload="none"><source src="" type="audio/mpeg"></audio>
-        </article>
-
-        <!-- add more cards as needed -->
-      </div>
-    </section>
-
-    <!-- LEGACY -->
-    <section id="legacy" class="section" aria-labelledby="legacy-heading">
-      <h4 id="legacy-heading">Legacy & Impact</h4>
-      <div class="legacy-grid">
-        <div>
-          <div class="pull-quote">“A voice that carried the spirit of Odisha in simple yet powerful verse.”</div>
-          <p style="margin-top:12px;color:var(--muted)">Pandab’s influence extends into regional theater, translation communities, and literary festivals. He is often praised for his balance of the lyrical and the accessible.</p>
-        </div>
-        <aside>
-          <h5 style="margin-top:0; font-family:'Merriweather', serif">Recognition</h5>
-          <ul style="list-style:none; padding:0; color:var(--muted)">
-            <li>• State literary award (Year - replace)</li>
-            <li>• Featured poet at National Poetry Festival (Year - replace)</li>
-            <li>• Longlisted / shortlisted for XYZ Prizes</li>
-          </ul>
-          <div style="margin-top:12px;">
-            <img src="https://via.placeholder.com/260x140?text=Badge+1" alt="award badge" style="width:100%;border-radius:8px;">
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- EVENTS & NEWS -->
-    <section id="events" class="section" aria-labelledby="events-heading">
-      <h4 id="events-heading">Events & News</h4>
-      <div style="display:flex; gap:18px; flex-wrap:wrap;">
-        <div style="flex:1; min-width:240px; background:#fff; padding:14px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-          <strong>17 Aug 2025 — Poetry Reading</strong>
-          <p style="margin:8px 0 0 0;color:var(--muted)">Join us for a reading of select poems and conversation with local scholars.</p>
-        </div>
-        <div style="flex:1; min-width:240px; background:#fff; padding:14px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-          <strong>New Collection Release</strong>
-          <p style="margin:8px 0 0 0;color:var(--muted)">Announcement: A curated edition of Pandab's early poems is in preparation.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MULTIMEDIA -->
-    <section id="multimedia" class="section" aria-labelledby="multimedia-heading">
-      <h4 id="multimedia-heading">Multimedia</h4>
-      <div class="multimedia-grid">
-        <div>
-          <!-- Example embedded video (replace src with actual video URLs) -->
-          <div style="aspect-ratio:16/9; background:#000; border-radius:8px; overflow:hidden;">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/_5O2LdsueD4" title="Video interviews and recitations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div style="aspect-ratio:16/9; background:#000; border-radius:8px; overflow:hidden;">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/s1rS4XrVKgA" title="Video interviews and recitations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <div style="margin-top:12px;">
-            <h5 style="margin:6px 0 6px 0; font-family:'Merriweather', serif">Photo Gallery</h5>
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
-              <img src="portrait.png" alt="portrait" style="width:120px; height:120px; object-fit:cover; border-radius:6px;">
-              <img src="https://via.placeholder.com/120x120?text=Photo" alt="photo" style="width:120px; height:120px; object-fit:cover; border-radius:6px;">
-              <img src="https://via.placeholder.com/120x120?text=Photo" alt="photo" style="width:120px; height:120px; object-fit:cover; border-radius:6px;">
-            </div>
-          </div>
-        </div>
-
-        <aside>
-          <h5 style="margin-top:0; font-family:'Merriweather', serif">Interviews & Clips</h5>
-          <p style="color:var(--muted)">Clips and interviews available on <a href="https://www.facebook.com/shatrughna.pandab/" target="_blank" rel="noopener">Facebook</a> and other video platforms.</p>
-
-          <div style="margin-top:12px; background:#fff; padding:8px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-            <strong>Interactive timeline</strong>
-            <p style="margin:8px 0 0 0;color:var(--muted)">Click a milestone to learn more about that period in his life.</p>
-            <ul style="list-style:none; padding:0; margin:8px 0 0 0; color:var(--muted)">
-              <li><button style="background:transparent; border:0; color:var(--accent-maroon); cursor:pointer" onclick="showMilestone('1957')">1957</button></li>
-              <li><button style="background:transparent; border:0; color:var(--accent-maroon); cursor:pointer" onclick="showMilestone('1992')">1992</button></li>
-              <li><button style="background:transparent; border:0; color:var(--accent-maroon); cursor:pointer" onclick="showMilestone('2008')">2008</button></li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section contact" aria-labelledby="contact-heading">
-      <div>
-        <h4 id="contact-heading">Contact & Newsletter</h4>
-
-        <form id="contactForm" onsubmit="event.preventDefault(); alert('Thank you — this is a demo form. Connect this to your backend or email service.');">
-          <label>
-            <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Name</div>
-            <input type="text" name="name" required placeholder="Your name">
-          </label>
-          <label style="margin-top:8px;">
-            <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Email</div>
-            <input type="email" name="email" required placeholder="you@example.com">
-          </label>
-          <label style="margin-top:8px;">
-            <div style="font-size:13px; color:var(--muted); margin-bottom:6px;">Message</div>
-            <textarea name="message" rows="5" placeholder="Write your message..."></textarea>
-          </label>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-
-      <aside>
-        <h5 style="margin-top:0; font-family:'Merriweather', serif">Stay Connected</h5>
-        <p style="color:var(--muted)">Subscribe for news, events, and new releases.</p>
-        <form id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed (demo)');">
-          <input type="email" placeholder="Your email" required>
-          <button style="width:100%; margin-top:8px;" type="submit">Subscribe</button>
-        </form>
-
-        <div style="margin-top:12px;">
-          <h6 style="margin:8px 0 6px 0;">Social</h6>
-          <div style="display:flex; gap:8px;">
-            <a href="https://www.facebook.com/shatrughna.pandab/" target="_blank" rel="noopener" style="text-decoration:none; color:var(--deep-brown)">Facebook</a>
-            <!-- Add other links -->
-          </div>
-        </div>
-      </aside>
-    </section>
-
-  </main>
-
-  <footer>
-    © <span id="year"></span> Shatrughna Pandab • Built with care • Designed for literature lovers
-  </footer>
-
-  <!-- Minimal JS for interactions -->
-  <script>
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Filters for works
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.works-grid .card');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelector('.filter-btn.active')?.classList.remove('active');
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        cards.forEach(card => {
-          if(f === 'all' || card.dataset.theme === f) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // audio play demo (plays first audio child if present)
-    function playAudioSample(btn){
-      const card = btn.closest('.card');
-      const audio = card.querySelector('audio');
-      if(!audio) return;
-      if(!audio.querySelector('source').src){
-        alert('No audio file attached. Replace the <audio> source with the audio file path to enable.');
-        return;
-      }
-      if(audio.paused) { audio.play(); btn.textContent='Pause'; }
-      else { audio.pause(); btn.textContent='Listen'; }
-    }
-
-    // milestone popup (simple demo)
-    function showMilestone(id){
-      const messages = {
-        '1957': 'Born on 19 July 1957.',
-        '1992': 'Volume I: Selected Poems (1992) published.',
-        '2008': 'Silent Prayers collection released in 2008.'
-      };
-      alert(messages[id] || 'More milestone detail (replace with richer modal content).');
-    }
-
-    function openDetails(title){
-      alert('Open details for: ' + title + ' (replace with modal or route to detailed page).');
-    }
-  </script>
+<section id="contact" class="contact">
+  <h2>Contact & Newsletter</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="3"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p>
+    <a href="https://www.facebook.com/satrughna.pandab/" target="_blank">Facebook</a> |
+    <a href="#">Subscribe to Newsletter</a>
+  </p>
+</section>
 </body>
 </html>
-
-
-
-
-
-
-
