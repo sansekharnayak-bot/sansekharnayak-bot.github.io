@@ -1,314 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Satrughna Pandab – Words that Echo Beyond Time</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Color Palette and fonts */
-    body {
-      background: #f7f2ea;
-      color: #352314;
-      font-family: 'Lato', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      position: relative;
-      width: 100%;
-      height: 350px;
-      background: linear-gradient(120deg, #b89560aa, #4d2c23bb), url('portrait.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .header-content {
-      position: relative;
-      z-index: 2;
-    }
-    header h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 3em;
-      color: #fffbe9;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    header p {
-      font-size: 1.3em;
-      color: #f4e8c1;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-    nav {
-      background: #8d6e53bb;
-      display: flex;
-      justify-content: center;
-      padding: 12px 0;
-    }
-    nav a {
-      color: #fffbe9;
-      text-decoration: none;
-      margin: 0 18px;
-      font-weight: 600;
-      font-size: 1.05em;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #b89560;
-    }
-    section {
-      max-width: 900px;
-      margin: 38px auto 0 auto;
-      padding: 0 18px;
-      background: rgba(255, 255, 245, 0.95);
-      border-radius: 10px;
-      box-shadow: 0 4px 26px rgba(125, 92, 60, 0.07);
-    }
-    .timeline, .awards, .poems, .videos, .contact {
-      margin-bottom: 36px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid #dcc9a4;
-    }
-    h2 {
-      font-family: 'Merriweather', serif;
-      color: #745c3a;
-      font-size: 2em;
-      margin-bottom: 12px;
-      margin-top: 43px;
-      letter-spacing: 1px;
-    }
-    ul.timeline-list {
-      list-style: none;
-      padding: 0;
-    }
-    ul.timeline-list li {
-      margin-bottom: 11px;
-      font-size: 1.08em;
-    }
-    .awards-badge {
-      display: inline-block;
-      background: #b89560;
-      color: #fff;
-      border-radius: 5px;
-      padding: 5px 13px;
-      margin-right: 6px;
-      font-size: 1em;
-      letter-spacing: 1px;
-    }
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 19px;
-      margin-top: 18px;
-      margin-bottom: 20px;
-    }
-    .work-card {
-      background: #fffbe5;
-      border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(180, 149, 96, 0.11);
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .work-card h3 {
-      font-size: 1.2em;
-      color: #b89560;
-      margin-bottom: 4px;
-    }
-    .work-card p {
-      font-size: 0.98em;
-      margin-bottom: 10px;
-      color: #4c3217;
-    }
-    .card-actions a {
-      margin-right: 6px;
-      font-size: 0.98em;
-      background: #b89560;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 5px 10px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .card-actions a:hover {
-      background: #745c3a;
-    }
-    .poem-snippet {
-      font-size: 1.08em;
-      font-style: italic;
-      color: #6c4820;
-      margin-bottom: 12px;
-      margin-top: 7px;
-    }
-    .video-embed {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-    .video-embed iframe {
-      width: 350px;
-      height: 200px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 2px 14px rgba(180, 149, 96, 0.11);
-      background: #fff;
-    }
-    .contact form {
-      display: grid;
-      gap: 15px;
-      max-width: 400px;
-      margin-top: 10px;
-      font-size: 1em;
-    }
-    .contact label {
-      font-weight: 600;
-    }
-    .contact input, .contact textarea {
-      padding: 7px;
-      border: 1px solid #b89560;
-      border-radius: 5px;
-      background: #faf5e7;
-      resize: vertical;
-    }
-    .contact button {
-      background: #b89560;
-      color: #fff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 5px;
-      font-size: 1.1em;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.2s;
-    }
-    .contact button:hover {
-      background: #745c3a;
-    }
-    /* Responsive */
-    @media (max-width: 640px) {
-      .works-grid, .video-embed {
-        grid-template-columns: 1fr !important;
-        flex-direction: column;
-      }
-      header h1 {
-        font-size: 2em;
-      }
-    }
-  </style>
-</head>
-<body>
-<header>
-  <div class="header-content">
-    <h1>Satrughna Pandab</h1>
-    <p>"Words that echo beyond time, shaping hearts and history."</p>
-  </div>
-</header>
-<nav>
-  <a href="#biography">Biography</a>
-  <a href="#works">Works</a>
-  <a href="#themes">Themes & Impact</a>
-  <a href="#awards">Awards</a>
-  <a href="#events">Events</a>
-  <a href="#multimedia">Multimedia</a>
-  <a href="#contact">Contact</a>
-</nav>
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-<section id="biography" class="timeline">
-  <h2>Biography & Timeline</h2>
-  <ul class="timeline-list">
-    <li><strong>1957:</strong> Born July 19 in Odisha.</li>
-    <li><strong>1980s–Present:</strong> Key figure in Odia literary and academic circles; known for works on social resistance and empowerment.</li>
-    <li><strong>2018:</strong> Honored with Sarala Puraskar for “Misra Dhrupad”.</li>
-  </ul>
-</section>
+export default function SatrughnaPandabSite() {
+const [activeSection, setActiveSection] = useState("home");
 
-<section id="works">
-  <h2>Major Poetry Collections</h2>
-  <div class="works-grid">
-    <div class="work-card">
-      <h3>Misra Dhrupad</h3>
-      <p>Acclaimed for its focus on resistance and social change. Winner of Sarala Puraskar.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-        <a href="#">Download</a>
-        <a href="#">Listen</a>
-      </div>
+return (
+<div className="font-sans bg-[#fdfaf5] text-gray-800">
+  {/* Sticky Navbar */}
+  <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+    <ul className="flex justify-center space-x-6 py-4 font-semibold">
+      {[
+      "Home",
+      "Biography",
+      "Works",
+      "Themes & Impact",
+      "Awards & Recognition",
+      "Events",
+      "Multimedia",
+      "Contact",
+      ].map((item) => (
+      <li
+              key={item}
+              onClick={() => setActiveSection(item.toLowerCase())}
+      className="cursor-pointer hover:text-[#8B0000] transition"
+      >
+      {item}
+      </li>
+      ))}
+    </ul>
+  </nav>
+
+  {/* Hero Section */}
+  <section id="home" className="pt-24 relative text-center">
+    <img
+            src="/mnt/data/2da9a299-060d-4803-b7e0-a6c662a20261.png"
+            alt="Satrughna Pandab Banner"
+            className="w-full h-[500px] object-cover opacity-80"
+    />
+    <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center text-white bg-black bg-opacity-40">
+      <h1 className="text-5xl font-serif">Satrughna Pandab</h1>
+      <p className="mt-4 text-xl italic">
+        "Words that echo beyond time, shaping hearts and history."
+      </p>
     </div>
-    <div class="work-card">
-      <h3>Prativa Satapathynka Nirbachita Kabita</h3>
-      <p>Curated selection showcasing diversity and emotional depth.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-      </div>
+  </section>
+
+  {/* Biography */}
+  <section id="biography" className="py-16 px-6 md:px-20 bg-[#fffaf0]">
+    <h2 className="text-3xl font-serif mb-6 text-center">Biography</h2>
+    <p className="max-w-3xl mx-auto text-lg leading-relaxed">
+      Satrughna Pandab (b. 19 July 1957) is a pioneering Odia poet whose
+      works resonate with social justice, empowerment, and cultural
+      transformation. His life reflects a journey of resistance and grace.
+    </p>
+  </section>
+
+  {/* Works */}
+  <section id="works" className="py-16 px-6 md:px-20">
+    <h2 className="text-3xl font-serif mb-8 text-center">Works</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {["Misra Dhrupad", "Prativa Satapathynka Nirbachita Kabita", "Srabasti Ru Srabasti", "Pani O Anyana Kabita"].map((title, i) => (
+      <Card key={i} className="shadow-md hover:shadow-lg transition">
+        <CardContent className="p-4">
+          <h3 className="font-serif text-xl mb-2">{title}</h3>
+          <p className="text-sm text-gray-600 mb-4">Excerpt from {title}...</p>
+          <div className="flex space-x-2">
+            <Button variant="outline">Read More</Button>
+            <Button variant="outline">Download</Button>
+            <Button variant="outline">Listen</Button>
+          </div>
+        </CardContent>
+      </Card>
+      ))}
     </div>
-    <div class="work-card">
-      <h3>Srabasti Ru Srabasti</h3>
-      <p>Resonant with lyrical beauty and social themes.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-      </div>
+  </section>
+
+  {/* Themes & Impact */}
+  <section id="themes" className="py-16 px-6 md:px-20 bg-[#f9f4ef]">
+    <h2 className="text-3xl font-serif mb-8 text-center">Themes & Impact</h2>
+    <blockquote className="italic max-w-2xl mx-auto text-lg text-center">
+      “Bhabi Nathi Keve / Bhoka ete niraba hoithai paari…”
+    </blockquote>
+    <p className="mt-6 text-center text-gray-700">
+      His poetry explores themes of social resistance, caste, emancipation,
+      and progressive change.
+    </p>
+  </section>
+
+  {/* Awards & Recognition */}
+  <section id="awards" className="py-16 px-6 md:px-20">
+    <h2 className="text-3xl font-serif mb-8 text-center">
+      Awards & Recognition
+    </h2>
+    <p className="max-w-2xl mx-auto text-lg text-center">
+      Recipient of the prestigious <strong>Sarala Puraskar (2018)</strong> for
+      "Misra Dhrupad", recognizing his contribution to Odia literature.
+    </p>
+  </section>
+
+  {/* Multimedia */}
+  <section id="multimedia" className="py-16 px-6 md:px-20 bg-[#fffaf0]">
+    <h2 className="text-3xl font-serif mb-8 text-center">Multimedia</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
+      <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/_5O2LdsueD4"
+              title="YouTube video 1"
+              frameBorder="0"
+              allowFullScreen
+      ></iframe>
+      <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/s1rS4XrVKgA"
+              title="YouTube video 2"
+              frameBorder="0"
+              allowFullScreen
+      ></iframe>
     </div>
-    <div class="work-card">
-      <h3>Pani O Anyana Kabita</h3>
-      <p>Features poetic voice spanning human experience and spirituality.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="themes" class="poems">
-  <h2>Themes & Impact</h2>
-  <p><strong>Main Themes:</strong> Social resistance, caste, marginalization, emancipation, progressive change, empowerment, and the lived experience of the oppressed.</p>
-  <div class="poem-snippet">“Bhabi Nathi Keve / Bhoka ete niraba hoithai paari / Thuamula Ramapurara Manikeshwari nka / Andhara par niraba / Ete andhara je thakurani muh / Dishe nai din re bi.”</div>
-  <div class="poem-snippet">“Riding on a truck / Sanatana, where are you going? / To Therubhali or Damanjodi? / Wherever you go, there are hills. / And everywhere the hills are to be broken into dust...”</div>
-  <div class="poem-snippet">“Ask / the flustered women / blowing hard to keep the fire alight / as they push in the damp firewood, / what are they? / They can never answer / womanhood is a dazzling tongue of flame.”</div>
-</section>
+  {/* Contact */}
+  <section id="contact" className="py-16 px-6 md:px-20">
+    <h2 className="text-3xl font-serif mb-8 text-center">Contact</h2>
+    <form className="max-w-2xl mx-auto grid grid-cols-1 gap-4">
+      <input
+              type="text"
+              placeholder="Your Name"
+              className="border rounded p-3"
+      />
+      <input
+              type="email"
+              placeholder="Your Email"
+              className="border rounded p-3"
+      />
+      <textarea
+              placeholder="Your Message"
+              rows="5"
+              className="border rounded p-3"
+      ></textarea>
+      <Button>Send Message</Button>
+    </form>
+  </section>
 
-<section id="awards" class="awards">
-  <h2>Awards & Recognition</h2>
-  <span class="awards-badge">Sarala Puraskar (2018)</span>
-  <p>Received for “Misra Dhrupad,” Satrughna Pandab was honored with this prestigious Odisha literary award. The Sarala Puraskar includes a cash prize of ₹5 lakh and formal citation, celebrating his contribution to progressive Odia poetry.</p>
-  <p><em>“This honor reflects both literary excellence and the voice of social change.”</em></p>
-</section>
-
-<section id="events">
-  <h2>Events & News</h2>
-  <ul>
-    <li>Upcoming Poetry Reading: 23 October, Bhubaneswar</li>
-    <li>Book Launch: “New Voices” – December 2025</li>
-    <li>Recent Interview Published in Odia Literary Journal</li>
-  </ul>
-</section>
-
-<section id="multimedia" class="videos">
-  <h2>Multimedia</h2>
-  <div class="video-embed">
-    <iframe src="https://www.youtube.com/embed/_5O2LdsueD4" allowfullscreen title="Poetry Recitation 1"></iframe>
-    <iframe src="https://www.youtube.com/embed/s1rS4XrVKgA" allowfullscreen title="Poetry Recitation 2"></iframe>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <h2>Contact & Newsletter</h2>
-  <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="3"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-  <p>
-    <a href="https://www.facebook.com/satrughna.pandab/" target="_blank">Facebook</a> |
-    <a href="#">Subscribe to Newsletter</a>
-  </p>
-</section>
-</body>
-</html>
+  {/* Footer */}
+  <footer className="py-6 text-center bg-[#8B0000] text-white">
+    <p>© {new Date().getFullYear()} Satrughna Pandab. All rights reserved.</p>
+  </footer>
+</div>
+);
+}
