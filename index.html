@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Satrughna Pandab – Words That Echo Beyond Time</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Fonts for Elegance -->
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
   <!-- AOS Library for Scroll Animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
     :root {
@@ -17,11 +17,11 @@
       --warmcream: #f6edda;
       --glass-bg: rgba(237, 240, 209, 0.455);
       --accent: #832c1a;
-      --shadow: 0 8px 32px rgba(67,40,24,0.11);
+      --shadow: 0 8px 32px rgba(67, 40, 24, 0.11);
     }
     body {
       margin: 0;
-      font-family: 'Roboto', Arial, sans-serif;
+      font-family: "Roboto", Arial, sans-serif;
       background: linear-gradient(120deg, #e6dbc5 0%, #f6edda 87%);
       color: var(--deep);
       min-height: 100vh;
@@ -31,7 +31,7 @@
       height: 78vh;
       position: relative;
       background: linear-gradient(76deg, #b89560cc 0%, #43281899 100%),
-        url('portrait.png') center/cover no-repeat;
+        url("portrait.png") center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: left;
@@ -52,12 +52,18 @@
       animation: fadein 2s ease;
     }
     @keyframes fadein {
-      0%   { opacity: 0; }
-      50%  { opacity: 0.7; }
-      100% { opacity: 0.2; }
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0.2;
+      }
     }
     .hero-title {
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
       font-size: 2em;
       color: var(--accent);
       letter-spacing: 1px;
@@ -80,7 +86,7 @@
       padding: 13px 0;
       box-shadow: 0 2px 12px #b8956021;
       z-index: 10;
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
     }
     .nav a {
       color: var(--accent);
@@ -92,7 +98,8 @@
       border-radius: 19px;
       transition: background 0.21s, color 0.21s;
     }
-    .nav a:hover, .nav a:focus {
+    .nav a:hover,
+    .nav a:focus {
       background: var(--primary);
       color: #fffbe9;
     }
@@ -103,7 +110,7 @@
       position: relative;
     }
     section h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
       font-size: 2em;
       margin-bottom: 17px;
       color: var(--accent);
@@ -152,7 +159,7 @@
       transform: translateY(-4px) scale(1.03);
     }
     .work-card h3 {
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
       font-size: 1.15em;
       color: var(--accent);
       margin-bottom: 6px;
@@ -211,6 +218,7 @@
       padding: 36px;
       border-radius: 16px;
       box-shadow: var(--shadow);
+      margin-bottom: 20px;
     }
     /* Multimedia */
     .multimedia-video-grid {
@@ -239,14 +247,15 @@
       flex-direction: column;
       gap: 13px;
     }
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       padding: 8px;
       font-size: 1em;
       border-radius: 6px;
       border: 1px solid var(--primary);
-      background:#faf5e7;
+      background: #faf5e7;
       resize: vertical;
-      font-family:inherit;
+      font-family: inherit;
     }
     .contact-form button {
       background: var(--accent);
@@ -257,14 +266,15 @@
       font-size: 1.08em;
       cursor: pointer;
       margin-top: 7px;
-      font-family: 'Playfair Display', serif;
+      font-family: "Playfair Display", serif;
       font-weight: 700;
       transition: background 0.2s;
     }
     .contact-form button:hover {
       background: var(--primary);
     }
-    .newsletter-link, .fb-link {
+    .newsletter-link,
+    .fb-link {
       display: inline-block;
       margin: 14px 4px 0 0;
       font-weight: 700;
@@ -276,138 +286,192 @@
       background: #fffbe9;
       transition: background 0.2s;
     }
-    .newsletter-link:hover, .fb-link:hover {
+    .newsletter-link:hover,
+    .fb-link:hover {
       background: var(--primary);
       color: #fff;
     }
-    @media (max-width: 700px){
-      .hero-content {padding: 1.1em 0.4em;}
-      .hero-title {font-size: 1.7em;}
-      section {padding:0 6px;}
-      .works-grid {grid-template-columns: 1fr;}
-      .multimedia-video-grid {flex-direction:column;}
+    @media (max-width: 700px) {
+      .hero-content {
+        padding: 1.1em 0.4em;
+      }
+      .hero-title {
+        font-size: 1.7em;
+      }
+      section {
+        padding: 0 6px;
+      }
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+      .multimedia-video-grid {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-<div class="hero">
-  <div class="hero-content" data-aos="zoom-in">
-    <div class="hero-title">Satrughna Pandab</div>
-    <div class="hero-tagline">"Words that echo beyond time, shaping hearts and history."</div>
-  </div>
-</div>
-<nav class="nav">
-  <a href="#biography">Biography</a>
-  <a href="#works">Works</a>
-  <a href="#themes">Themes</a>
-  <a href="#awards">Awards</a>
-  <a href="#events">Events</a>
-  <a href="#multimedia">Multimedia</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="biography">
-  <h2 data-aos="fade-right">Biography & Timeline</h2>
-  <div class="timeline">
-    <div class="timeline-item" data-aos="fade-up">
-      <strong>1956:</strong> Born July 18 in Odisha.
-    </div>
-    <div class="timeline-item" data-aos="fade-up" data-aos-delay="80">
-      <strong>1980s–Present:</strong> Key figure in Odia literary and academic circles, renowned for progressive poetry and advocacy.
-    </div>
-    <div class="timeline-item" data-aos="fade-up" data-aos-delay="120">
-      <strong>2018:</strong> Honored with Sarala Puraskar for “Misra Dhrupad”.
+  <div class="hero">
+    <div class="hero-content" data-aos="zoom-in">
+      <div class="hero-title">Satrughna Pandab</div>
+      <div class="hero-tagline">"Words that echo beyond time, shaping hearts and history."</div>
     </div>
   </div>
-</section>
+  <nav class="nav">
+    <a href="#biography">Biography</a>
+    <a href="#works">Works</a>
+    <a href="#themes">Themes</a>
+    <a href="#awards">Awards</a>
+    <a href="#events">Events</a>
+    <a href="#multimedia">Multimedia</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<section id="works">
-  <h2 data-aos="fade-up">Major Poetry Collections</h2>
-  <div class="works-grid">
-    <div class="work-card" data-aos="flip-left">
-      <h3>Misra Dhrupad</h3>
-      <p>Acclaimed for its focus on resistance and social change. Winner of Sarala Puraskar.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-        <a href="#">Download</a>
-        <a href="#">Listen</a>
+  <section id="biography">
+    <h2 data-aos="fade-right">Biography & Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <strong>1955:</strong> Born July 18 in Odisha, near the Brahmani river — a lifelong inspiration.
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="80">
+        <strong>1970s:</strong> Composed first poems at school, blending science and literature.
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="120">
+        <strong>1983:</strong> Debut collection published under Bhubaneswar Lekhak Samiti.
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="160">
+        <strong>1980s–2019:</strong> 36-year academic career; prolific writer and literary critic.
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <strong>2001:</strong> Odisha Sahitya Akademi Award for poetic excellence.
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="240">
+        <strong>2018:</strong> Sarala Puraskar for “Misra Dhrupad,” blending tradition and modernity.
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="280">
+        <strong>2024:</strong> Global release of English translation “WATER and Other Poems.”
+      </div>
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="320">
+        <strong>2025:</strong> Manjari Devi Literature Award for lifelong literary contributions.
       </div>
     </div>
-    <div class="work-card" data-aos="flip-left" data-aos-delay="70">
-      <h3>Prativa Satapathynka Nirbachita Kabita</h3>
-      <p>Curated selection showcasing diversity and emotional depth.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
+  </section>
+
+  <section id="works">
+    <h2 data-aos="fade-up">Major Poetry Collections</h2>
+    <div class="works-grid">
+      <div class="work-card" data-aos="flip-left">
+        <h3>Misra Dhrupad</h3>
+        <p>Award-winning 2018 collection blending traditional dhrupad style with modern Odia themes of resistance, community, and memory. Recognized with Sarala Puraskar.</p>
+        <div class="card-actions">
+          <a href="#">Read More</a>
+          <a href="#">Download</a>
+          <a href="#">Listen</a>
+        </div>
+      </div>
+      <div class="work-card" data-aos="flip-left" data-aos-delay="60">
+        <h3>Sabarmati</h3>
+        <p>Published 2005, focused on Gandhian philosophy, containing 14 commentaries and poems such as "Gandhi Mahima Kavita," "Dandi Das," and "Sundo Gop Das."</p>
+        <div class="card-actions">
+          <a href="#">Read More</a>
+          <a href="#">Download</a>
+          <a href="#">Listen</a>
+        </div>
+      </div>
+      <div class="work-card" data-aos="flip-right" data-aos-delay="120">
+        <h3>WATER and Other Poems</h3>
+        <p>Environmental poetry collection translated into English by Pratap Kumar Dash, released globally in 2024, highlighting nature and sustainability issues.</p>
+        <div class="card-actions">
+          <a href="#">Read More</a>
+          <a href="#">Download</a>
+          <a href="#">Listen</a>
+        </div>
+      </div>
+      <div class="work-card" data-aos="flip-right" data-aos-delay="180">
+        <h3>Pakha Pakhi</h3>
+        <p>Early poetry exploring personal and nuanced themes with lyrical finesse and emotional depth.</p>
+        <div class="card-actions">
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="work-card" data-aos="flip-left" data-aos-delay="240">
+        <h3>Prakash Pani</h3>
+        <p>Reflective verses focusing on motifs of light and water, illustrating Pandab’s deep engagement with natural imagery.</p>
+        <div class="card-actions">
+          <a href="#">Read More</a>
+        </div>
+      </div>
+      <div class="work-card" data-aos="flip-right" data-aos-delay="300">
+        <h3>Gandhi Mahima Kavita, Dandi Das, Sundo Gop Das</h3>
+        <p>Individual poems on Mahatma Gandhi and related historical narratives evoking ethical and social reflections.</p>
+        <div class="card-actions">
+          <a href="#">Read More</a>
+        </div>
       </div>
     </div>
-    <div class="work-card" data-aos="flip-right">
-      <h3>Srabasti Ru Srabasti</h3>
-      <p>Resonant with lyrical beauty and social themes.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-      </div>
+  </section>
+
+  <section id="themes">
+    <h2 data-aos="fade-right">Themes & Impact</h2>
+    <div class="poem-block" data-aos="fade-up">“Bhabi Nathi Keve / Bhoka ete niraba hoithai paari / Thuamula Ramapurara Manikeshwari nka / Andhara par niraba / Ete andhara je thakurani muh / Dishe nai din re bi.”</div>
+    <div class="poem-block" data-aos="fade-up" data-aos-delay="60">“Riding on a truck / Sanatana, where are you going? / To Therubhali or Damanjodi? / Wherever you go, there are hills. / And everywhere the hills are to be broken into dust...”</div>
+    <div class="poem-block" data-aos="fade-up" data-aos-delay="120">“Ask / the flustered women / blowing hard to keep the fire alight / as they push in the damp firewood, / what are they? / They can never answer / womanhood is a dazzling tongue of flame.”</div>
+    <p data-aos="fade-up" style="margin-top: 15px;">
+      <strong>Main Themes:</strong> Social resistance, caste, marginalization, emancipation, progressive change, empowerment, and the lived experience of the oppressed.
+    </p>
+  </section>
+
+  <section id="awards">
+    <h2 data-aos="fade-left">Awards & Recognition</h2>
+    <div class="award-section" data-aos="flip-up">
+      <span class="awards-badge">Sarala Puraskar (2018)</span>
+      <p>Received for “Misra Dhrupad,” Satrughna Pandab was honored with Odisha's foremost literary award, celebrating his poetic voice and social impact. The Sarala Puraskar includes a cash prize and formal citation.</p>
+      <p><em>“This honor reflects both literary excellence and the voice of social change.”</em></p>
     </div>
-    <div class="work-card" data-aos="flip-right" data-aos-delay="60">
-      <h3>Pani O Anyana Kabita</h3>
-      <p>Features poetic voice spanning human experience and spirituality.</p>
-      <div class="card-actions">
-        <a href="#">Read More</a>
-      </div>
+
+    <div class="award-section" data-aos="flip-up">
+      <span class="awards-badge">Odisha Sahitya Akademi Award (2001)</span>
+      <p>Acknowledged for poetic excellence, likely linked to his poetry collection "Sabarmati" and other verses from 1998-2000.</p>
     </div>
-  </div>
-</section>
 
-<section id="themes">
-  <h2 data-aos="fade-right">Themes & Impact</h2>
-  <div class="poem-block" data-aos="fade-up">“Bhabi Nathi Keve / Bhoka ete niraba hoithai paari / Thuamula Ramapurara Manikeshwari nka / Andhara par niraba / Ete andhara je thakurani muh / Dishe nai din re bi.”</div>
-  <div class="poem-block" data-aos="fade-up" data-aos-delay="60">“Riding on a truck / Sanatana, where are you going? / To Therubhali or Damanjodi? / Wherever you go, there are hills. / And everywhere the hills are to be broken into dust...”</div>
-  <div class="poem-block" data-aos="fade-up" data-aos-delay="120">“Ask / the flustered women / blowing hard to keep the fire alight / as they push in the damp firewood, / what are they? / They can never answer / womanhood is a dazzling tongue of flame.”</div>
-  <p data-aos="fade-up" style="margin-top:15px;">
-    <strong>Main Themes:</strong> Social resistance, caste, marginalization, emancipation, progressive change, empowerment, and the lived experience of the oppressed.
-  </p>
-</section>
+    <div class="award-section" data-aos="flip-up">
+      <span class="awards-badge">Manjari Devi Literature Award (2025)</span>
+      <p>Honors his lifelong contributions to Odia literature from poetry to criticism and translation.</p>
+    </div>
+  </section>
 
-<section id="awards">
-  <h2 data-aos="fade-left">Awards & Recognition</h2>
-  <div class="award-section" data-aos="flip-up">
-    <span class="awards-badge">Sarala Puraskar (2018)</span>
-    <p>Received for “Misra Dhrupad,” Satrughna Pandab was honored with Odisha's foremost literary award, celebrating his poetic voice and social impact. The Sarala Puraskar includes a cash prize and formal citation.</p>
-    <p style="font-style: italic;">“This honor reflects both literary excellence and the voice of social change.”</p>
-  </div>
-</section>
+  <section id="events">
+    <h2 data-aos="fade-right">Events & News</h2>
+    <ul data-aos="fade-up">
+      <li>Upcoming Poetry Reading: 23 October, Bhubaneswar</li>
+      <li>Book Launch: “New Voices” – December 2025</li>
+      <li>Recent Interview Published in Odia Literary Journal</li>
+    </ul>
+  </section>
 
-<section id="events">
-  <h2 data-aos="fade-right">Events & News</h2>
-  <ul data-aos="fade-up">
-    <li>Upcoming Poetry Reading: 23 October, Bhubaneswar</li>
-    <li>Book Launch: “New Voices” – December 2025</li>
-    <li>Recent Interview Published in Odia Literary Journal</li>
-  </ul>
-</section>
+  <section id="multimedia">
+    <h2 data-aos="fade-right">Multimedia</h2>
+    <div class="multimedia-video-grid">
+      <iframe src="https://www.youtube.com/embed/_5O2LdsueD4" allowfullscreen title="Poetry Recitation 1" data-aos="zoom-in"></iframe>
+      <iframe src="https://www.youtube.com/embed/s1rS4XrVKgA" allowfullscreen title="Poetry Recitation 2" data-aos="zoom-in" data-aos-delay="80"></iframe>
+    </div>
+  </section>
 
-<section id="multimedia">
-  <h2 data-aos="fade-right">Multimedia</h2>
-  <div class="multimedia-video-grid">
-    <iframe src="https://www.youtube.com/embed/_5O2LdsueD4" allowfullscreen title="Poetry Recitation 1" data-aos="zoom-in"></iframe>
-    <iframe src="https://www.youtube.com/embed/s1rS4XrVKgA" allowfullscreen title="Poetry Recitation 2" data-aos="zoom-in" data-aos-delay="80"></iframe>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 data-aos="fade-right">Contact & Newsletter</h2>
-  <form class="contact-form" data-aos="fade-up">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea rows="3" placeholder="Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-  <a class="fb-link" href="https://www.facebook.com/satrughna.pandab/" target="_blank">Facebook</a>
-  <a class="newsletter-link" href="#">Subscribe to Newsletter</a>
-</section>
-<!-- Animate On Scroll Library -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({duration: 760, once: true});
-</script>
+  <section id="contact">
+    <h2 data-aos="fade-right">Contact & Newsletter</h2>
+    <form class="contact-form" data-aos="fade-up">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea rows="3" placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <a class="fb-link" href="https://www.facebook.com/satrughna.pandab/" target="_blank">Facebook</a>
+    <a class="newsletter-link" href="#">Subscribe to Newsletter</a>
+  </section>
+  <!-- Animate On Scroll Library -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 760, once: true });
+  </script>
 </body>
 </html>
