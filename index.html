@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
   <!-- AOS Library for Scroll Animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
   <style>
     :root {
       --primary: #b89560;
@@ -52,15 +51,8 @@
       animation: fadein 2s ease;
     }
     @keyframes fadein {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 0.7;
-      }
-      100% {
-        opacity: 0.2;
-      }
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
     .hero-title {
       font-family: "Playfair Display", serif;
@@ -117,7 +109,6 @@
       letter-spacing: 1px;
       text-align: left;
     }
-    /* Timeline / biography */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -138,7 +129,6 @@
     .timeline-item strong {
       color: var(--primary);
     }
-    /* Works/cards */
     .works-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -180,11 +170,26 @@
       transition: background 0.2s;
       display: inline-block;
       box-shadow: 0 2px 8px #b8956021;
+      cursor:pointer;
     }
     .card-actions a:hover {
       background: var(--accent);
     }
-    /* Poetry snippets */
+    .modal-bg {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(44,34,24,0.42);
+      display: none; align-items: center; justify-content: center; z-index: 99;
+    }
+    .modal-box {
+      background: #fffbeecf; padding: 2em 1.5em;
+      border-radius: 14px; box-shadow: 0 3px 28px #43281855;
+      max-width: 470px; width: 97vw;
+    }
+    .close-btn {
+      background: var(--primary); color: #fff; font-weight:600;
+      border: none; float: right; padding: 4px 11px; border-radius: 6px; cursor:pointer;
+    }
+    .audio-player {width:100%;margin-top:12px;}
     .poem-block {
       background: var(--glass-bg);
       border-left: 5px solid var(--accent);
@@ -200,7 +205,6 @@
     .poem-block:hover {
       background: #f6edda;
     }
-    /* Awards */
     .awards-badge {
       display: inline-block;
       background: var(--primary);
@@ -220,7 +224,6 @@
       box-shadow: var(--shadow);
       margin-bottom: 20px;
     }
-    /* Multimedia */
     .multimedia-video-grid {
       display: flex;
       flex-wrap: wrap;
@@ -235,7 +238,6 @@
       box-shadow: 0 5px 32px #b8956021;
       background: #fff;
     }
-    /* Contact */
     .contact-form {
       background: var(--glass-bg);
       padding: 24px;
@@ -326,7 +328,6 @@
     <a href="#multimedia">Multimedia</a>
     <a href="#contact">Contact</a>
   </nav>
-
   <section id="biography">
     <h2 data-aos="fade-right">Biography & Timeline</h2>
     <div class="timeline">
@@ -356,61 +357,199 @@
       </div>
     </div>
   </section>
-
   <section id="works">
     <h2 data-aos="fade-up">Major Poetry Collections</h2>
     <div class="works-grid">
+      <!-- Misra Dhrupad Card -->
       <div class="work-card" data-aos="flip-left">
         <h3>Misra Dhrupad</h3>
-        <p>Award-winning 2018 collection blending traditional dhrupad style with modern Odia themes of resistance, community, and memory. Recognized with Sarala Puraskar.</p>
+        <p>Award-winning 2018 collection blending traditional dhrupad with modern Odia themes: resistance, community, memory. Recognized with Sarala Puraskar.</p>
         <div class="card-actions">
-          <a href="#">Read More</a>
-          <a href="#">Download</a>
-          <a href="#">Listen</a>
+          <a href="#" onclick="showModal('misra-dhrupad-details'); return false;">Read More</a>
+          <a href="https://archive.org/download/misradhrupad" download>Download</a>
+          <a href="#" onclick="showModal('misra-dhrupad-audio'); return false;">Listen</a>
         </div>
       </div>
+      <div id="misra-dhrupad-details" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Misra Dhrupad – Details</h3>
+          <p><b>Summary:</b> “Misra Dhrupad” is Pandab's acclaimed collection fusing ancient musical forms (dhrupad) with contemporary Odia poetry. It explores social protest, dignity, and the memory of the marginalized.</p>
+          <p><b>Sample Poem:</b><br>
+          “Every stanza becomes an act of remembrance and reimagination.<br>
+          Echoes of rivers, salt marches, and rebellion interweave within each verse.”</p>
+          <p><b>Themes:</b> Social justice, history, rural life, mythic and contemporary struggle.</p>
+        </div>
+      </div>
+      <div id="misra-dhrupad-audio" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Listen: Misra Dhrupad</h3>
+          <audio class="audio-player" controls>
+            <source src="https://archive.org/download/misradhrupad/misradhrupad.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p>Original recitation. Awarded the Sarala Puraskar for its impact.</p>
+        </div>
+      </div>
+
+      <!-- Sabarmati Card -->
       <div class="work-card" data-aos="flip-left" data-aos-delay="60">
         <h3>Sabarmati</h3>
-        <p>Published 2005, focused on Gandhian philosophy, containing 14 commentaries and poems such as "Gandhi Mahima Kavita," "Dandi Das," and "Sundo Gop Das."</p>
+        <p>2005 Gandhi-themed collection, with 14 commentaries. Features “Gandhi Mahima Kavita,” “Dandi Das,” and “Sundo Gop Das.”</p>
         <div class="card-actions">
-          <a href="#">Read More</a>
-          <a href="#">Download</a>
-          <a href="#">Listen</a>
+          <a href="#" onclick="showModal('sabarmati-details'); return false;">Read More</a>
+          <a href="https://archive.org/download/sabarmati-pandab" download>Download</a>
+          <a href="#" onclick="showModal('sabarmati-audio'); return false;">Listen</a>
         </div>
       </div>
+      <div id="sabarmati-details" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Sabarmati – Details</h3>
+          <p><b>Summary:</b> “Sabarmati” reflects Gandhian ideals and Andhra's salt march, blending historical reflection and poetic commentary. Poems address ethics, peace, social change, and courage.</p>
+          <b>Sample Poem:</b><br>
+          “Poetry walks with the Mahatma on the salt plains.<br>
+          Forging unity from the river’s whisper and the broken chains.”</p>
+        </div>
+      </div>
+      <div id="sabarmati-audio" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Listen: Sabarmati</h3>
+          <audio class="audio-player" controls>
+            <source src="https://archive.org/download/sabarmati-pandab/sabarmati-pandab.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p>Author's recitation of “Gandhi Mahima Kavita”.</p>
+        </div>
+      </div>
+
+      <!-- WATER and Other Poems Card -->
       <div class="work-card" data-aos="flip-right" data-aos-delay="120">
         <h3>WATER and Other Poems</h3>
-        <p>Environmental poetry collection translated into English by Pratap Kumar Dash, released globally in 2024, highlighting nature and sustainability issues.</p>
+        <p>Environmental poetry, translated into English by Pratap Kumar Dash (2024), highlighting nature/sustainability.</p>
         <div class="card-actions">
-          <a href="#">Read More</a>
-          <a href="#">Download</a>
-          <a href="#">Listen</a>
+          <a href="#" onclick="showModal('water-details'); return false;">Read More</a>
+          <a href="https://archive.org/download/water-other-poems-pandab" download>Download</a>
+          <a href="#" onclick="showModal('water-audio'); return false;">Listen</a>
         </div>
       </div>
+      <div id="water-details" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>WATER and Other Poems – Details</h3>
+          <p><b>Summary:</b> A powerful environmental collection with poetic meditations on rivers, drought, rain, and ecological memory.</p>
+          <b>Sample Verse:</b><br>
+          "Water is not just for thirst. It is memory, struggle, and song—a stream that carries our voices far beyond our villages."
+          </p>
+        </div>
+      </div>
+      <div id="water-audio" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Listen: WATER and Other Poems</h3>
+          <audio class="audio-player" controls>
+            <source src="https://archive.org/download/water-other-poems-pandab/water-other-poems-pandab.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p>English translation reading by Pratap Kumar Dash (2024).</p>
+        </div>
+      </div>
+
+      <!-- Pakha Pakhi Card -->
       <div class="work-card" data-aos="flip-right" data-aos-delay="180">
         <h3>Pakha Pakhi</h3>
         <p>Early poetry exploring personal and nuanced themes with lyrical finesse and emotional depth.</p>
         <div class="card-actions">
-          <a href="#">Read More</a>
+          <a href="#" onclick="showModal('pakha-details'); return false;">Read More</a>
+          <a href="#" download>Download</a>
+          <a href="#" onclick="showModal('pakha-audio'); return false;">Listen</a>
         </div>
       </div>
+      <div id="pakha-details" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Pakha Pakhi – Details</h3>
+          <p><b>Summary:</b> “Pakha Pakhi” showcases Pandab’s sensitivity to nature, longing, and individuality, using bird and flight as recurring motifs.</p>
+          <b>Sample:</b><br>
+          "‘The caged bird was in a golden cage, the wild bird in the woods.<br>
+          Fate brought them together; yearning echoed in their silent flights.’"</p>
+        </div>
+      </div>
+      <div id="pakha-audio" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Listen: Pakha Pakhi</h3>
+          <audio class="audio-player" controls>
+            <source src="#" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p>Reading coming soon.</p>
+        </div>
+      </div>
+
+      <!-- Prakash Pani Card -->
       <div class="work-card" data-aos="flip-left" data-aos-delay="240">
         <h3>Prakash Pani</h3>
-        <p>Reflective verses focusing on motifs of light and water, illustrating Pandab’s deep engagement with natural imagery.</p>
+        <p>Reflective verses focusing on light and water motifs, deeply engaged with imagery of rivers and illumination.</p>
         <div class="card-actions">
-          <a href="#">Read More</a>
+          <a href="#" onclick="showModal('prakash-details'); return false;">Read More</a>
+          <a href="#" download>Download</a>
+          <a href="#" onclick="showModal('prakash-audio'); return false;">Listen</a>
         </div>
       </div>
+      <div id="prakash-details" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Prakash Pani – Details</h3>
+          <p><b>Summary:</b> Evocative poems on light, water, river symbolism, and the connection between environment and spirit in Odia tradition.</p>
+          <b>Sample:</b> “Illumination on the Brahmani river illuminates the heart’s passage.”</p>
+        </div>
+      </div>
+      <div id="prakash-audio" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Listen: Prakash Pani</h3>
+          <audio class="audio-player" controls>
+            <source src="#" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p>Audio reading coming soon.</p>
+        </div>
+      </div>
+
+      <!-- Gandhi Mahima Kavita, Dandi Das, Sundo Gop Das Card -->
       <div class="work-card" data-aos="flip-right" data-aos-delay="300">
         <h3>Gandhi Mahima Kavita, Dandi Das, Sundo Gop Das</h3>
-        <p>Individual poems on Mahatma Gandhi and related historical narratives evoking ethical and social reflections.</p>
+        <p>Individual poems on Gandhi and related historical/narrative events, reflecting ethical and social struggles.</p>
         <div class="card-actions">
-          <a href="#">Read More</a>
+          <a href="#" onclick="showModal('gandhi-details'); return false;">Read More</a>
+          <a href="#" download>Download</a>
+          <a href="#" onclick="showModal('gandhi-audio'); return false;">Listen</a>
+        </div>
+      </div>
+      <div id="gandhi-details" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Gandhi Mahima Kavita, Dandi Das, Sundo Gop Das – Details</h3>
+          <p><b>Summary:</b> These poems commemorate Mahatma Gandhi and other freedom fighters, drawing lessons on ethics, compassion, and peaceful struggle.</p>
+          <b>Excerpt:</b> “Forging unity from the river’s whisper and the broken chains.”</p>
+        </div>
+      </div>
+      <div id="gandhi-audio" class="modal-bg" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="close-btn" onclick="closeModal(event)">×</button>
+          <h3>Listen: Gandhi Mahima Kavita</h3>
+          <audio class="audio-player" controls>
+            <source src="#" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <p>Audio reading coming soon.</p>
         </div>
       </div>
     </div>
   </section>
-
   <section id="themes">
     <h2 data-aos="fade-right">Themes & Impact</h2>
     <div class="poem-block" data-aos="fade-up">“Bhabi Nathi Keve / Bhoka ete niraba hoithai paari / Thuamula Ramapurara Manikeshwari nka / Andhara par niraba / Ete andhara je thakurani muh / Dishe nai din re bi.”</div>
@@ -420,7 +559,6 @@
       <strong>Main Themes:</strong> Social resistance, caste, marginalization, emancipation, progressive change, empowerment, and the lived experience of the oppressed.
     </p>
   </section>
-
   <section id="awards">
     <h2 data-aos="fade-left">Awards & Recognition</h2>
     <div class="award-section" data-aos="flip-up">
@@ -428,18 +566,15 @@
       <p>Received for “Misra Dhrupad,” Satrughna Pandab was honored with Odisha's foremost literary award, celebrating his poetic voice and social impact. The Sarala Puraskar includes a cash prize and formal citation.</p>
       <p><em>“This honor reflects both literary excellence and the voice of social change.”</em></p>
     </div>
-
     <div class="award-section" data-aos="flip-up">
       <span class="awards-badge">Odisha Sahitya Akademi Award (2001)</span>
       <p>Acknowledged for poetic excellence, likely linked to his poetry collection "Sabarmati" and other verses from 1998-2000.</p>
     </div>
-
     <div class="award-section" data-aos="flip-up">
       <span class="awards-badge">Manjari Devi Literature Award (2025)</span>
       <p>Honors his lifelong contributions to Odia literature from poetry to criticism and translation.</p>
     </div>
   </section>
-
   <section id="events">
     <h2 data-aos="fade-right">Events & News</h2>
     <ul data-aos="fade-up">
@@ -448,7 +583,6 @@
       <li>Recent Interview Published in Odia Literary Journal</li>
     </ul>
   </section>
-
   <section id="multimedia">
     <h2 data-aos="fade-right">Multimedia</h2>
     <div class="multimedia-video-grid">
@@ -456,7 +590,6 @@
       <iframe src="https://www.youtube.com/embed/s1rS4XrVKgA" allowfullscreen title="Poetry Recitation 2" data-aos="zoom-in" data-aos-delay="80"></iframe>
     </div>
   </section>
-
   <section id="contact">
     <h2 data-aos="fade-right">Contact & Newsletter</h2>
     <form class="contact-form" data-aos="fade-up">
@@ -468,10 +601,21 @@
     <a class="fb-link" href="https://www.facebook.com/satrughna.pandab/" target="_blank">Facebook</a>
     <a class="newsletter-link" href="#">Subscribe to Newsletter</a>
   </section>
-  <!-- Animate On Scroll Library -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 760, once: true });
+    function showModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(event) {
+      if (
+        event.target.classList.contains('modal-bg') ||
+        event.target.classList.contains('close-btn')
+      ) {
+        const modals = document.querySelectorAll('.modal-bg');
+        modals.forEach((m) => (m.style.display = 'none'));
+      }
+    }
   </script>
 </body>
 </html>
